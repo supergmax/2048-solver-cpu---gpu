@@ -468,7 +468,7 @@ if __name__ == "__main__":
     random.seed(42)
     np.random.seed(42)
 
-    print("=== 2048 AI GPU (Multi-Streams, High Occupancy) ===")
+    print("=== 2048 GPU ===")
     start_t = time.time()
 
     final_board = play_2048_gpu(n_steps=10000, rollouts=64)
