@@ -39,5 +39,6 @@ python code_gpu.py
 ## Auteur
 
 **Maxence Gomes**  
-[LinkedIn](https://www.linkedin.com/in/maxence-gomes-714283165/)  
 [GitHub](https://github.com/supergmax)
+**Quentin Carbonati**  
+**Mathieux Labrousse**  
