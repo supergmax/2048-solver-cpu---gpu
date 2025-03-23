@@ -1,6 +1,6 @@
 # 2048 AI - CPU & GPU Version
 
-Ce projet est une Intelligence Artificielle qui joue automatiquement au jeu 2048.
+Ce projet est un algorithme qui joue automatiquement au jeu 2048.
 
 Deux versions sont disponibles :
 - `code_cpu.py` : version classique sur processeur (CPU)
