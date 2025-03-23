@@ -171,7 +171,7 @@ if __name__ == "__main__":
     random.seed(42)
     np.random.seed(42)
 
-    print("=== 2048 AI CPU ===")
+    print("=== 2048 CPU ===")
     start_t = time.time()
     final_board = play_2048_cpu()
     end_t = time.time()
