@@ -441,6 +441,8 @@ def init_board():
 
 def play_2048_gpu(n_steps=50, rollouts=8192):
     board = init_board()
+    start_time = time.time()
+
     for step in range(n_steps):
         if is_game_over(board):
             break
@@ -450,6 +452,16 @@ def play_2048_gpu(n_steps=50, rollouts=8192):
         new_b, _ = apply_move_njit(board, move)
         board = new_b.copy()
         board = spawn_new_tile(board)
+
+        # === Affichage live de l'avancement ===
+        elapsed = time.time() - start_time
+        current_score = get_score_njit(board)
+        possible_moves = get_possible_moves(board)
+        move_str = ["UP", "DOWN", "LEFT", "RIGHT"][move]
+        print(f"[{step+1}/{n_steps}] Move: {move_str}, Score: {current_score}, "
+              f"Moves left: {[['UP', 'DOWN', 'LEFT', 'RIGHT'][m] for m in possible_moves]}, "
+              f"Time: {elapsed:.2f}s")
+
     return board
 
 if __name__ == "__main__":
@@ -459,7 +471,7 @@ if __name__ == "__main__":
     print("=== 2048 AI GPU (Multi-Streams, High Occupancy) ===")
     start_t = time.time()
 
-    final_board = play_2048_gpu(n_steps=500, rollouts=2048)
+    final_board = play_2048_gpu(n_steps=10000, rollouts=64)
 
     end_t = time.time()
 
