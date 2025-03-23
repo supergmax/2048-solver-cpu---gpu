@@ -1,4 +1,4 @@
-# 2048 AI - CPU & GPU Version
+# 2048 - CPU & GPU Version
 
 Ce projet est un algorithme qui joue automatiquement au jeu 2048.
 
